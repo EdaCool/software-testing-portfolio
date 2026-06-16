@@ -1,0 +1,139 @@
+{
+  "info": {
+    "name": "Restful-Booker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://restful-booker.herokuapp.com"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth - Create Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\" : \"admin\",\n  \"password\" : \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth",
+          "host": ["{{base_url}}"],
+          "path": ["auth"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Get Booking Ids",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/booking",
+          "host": ["{{base_url}}"],
+          "path": ["booking"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Get Booking",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/booking/1",
+          "host": ["{{base_url}}"],
+          "path": ["booking", "1"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Create Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstname\" : \"Jim\",\n  \"lastname\" : \"Brown\",\n  \"totalprice\" : 111,\n  \"depositpaid\" : true,\n  \"bookingdates\" : {\n    \"checkin\" : \"2026-06-01\",\n    \"checkout\" : \"2026-06-10\"\n  },\n  \"additionalneeds\" : \"Breakfast\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/booking",
+          "host": ["{{base_url}}"],
+          "path": ["booking"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Update Booking",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstname\" : \"Tom\",\n  \"lastname\" : \"Brown\",\n  \"totalprice\" : 222,\n  \"depositpaid\" : true,\n  \"bookingdates\" : {\n    \"checkin\" : \"2026-06-02\",\n    \"checkout\" : \"2026-06-05\"\n  },\n  \"additionalneeds\" : \"Lunch\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/booking/1",
+          "host": ["{{base_url}}"],
+          "path": ["booking", "1"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Delete Booking",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "token={{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/booking/1",
+          "host": ["{{base_url}}"],
+          "path": ["booking", "1"]
+        }
+      }
+    }
+  ]
+}
+

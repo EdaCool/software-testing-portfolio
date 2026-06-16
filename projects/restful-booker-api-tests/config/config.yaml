@@ -1,4 +1,5 @@
-base_url: "https://restful-booker.herokuapp.com"
+base_url: "http://localhost:5000"
 username: "admin"
 password: "password123"
 timeout: 10
+
