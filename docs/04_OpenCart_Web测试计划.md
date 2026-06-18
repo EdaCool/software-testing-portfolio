@@ -1,7 +1,7 @@
 # OpenCart Web 自动化回归测试计划
 
 ## 一、测试对象
-OpenCart 电商系统（本地 Docker 部署，http://localhost）
+OpenCart 电商系统（本地 Docker 部署，http://localhost失败 opencart官方demo也失败 改成TutorialsNinjaOpencart Demo）
 
 ## 二、测试范围
 - 首页加载
@@ -17,7 +17,7 @@ OpenCart 电商系统（本地 Docker 部署，http://localhost）
 
 ## 四、测试环境
 - Windows 10 + WSL2 + Docker Desktop
-- OpenCart Docker 镜像（latest）
+- TutorialsNinjaOpencart Demo(https://tutorialsninja.com/demo/)
 - 浏览器：Chrome（最新稳定版）
 - Selenium + pytest
 

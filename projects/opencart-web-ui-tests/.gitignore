@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+reports/allure-results/
+reports/allure-report/
+screenshots/
+
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,4 @@
+base_url: "https://tutorialsninja.com/demo/"
+browser: "chrome"
+timeout: 20
+headless: true
